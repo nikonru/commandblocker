@@ -17,7 +17,7 @@ public class SelfKillCommand {
                 .executes(context -> {
                     ServerPlayer player = context.getSource().getPlayerOrException();
 
-                    player.kill();
+                    player.die(player.damageSources().generic());
                     player.sendSystemMessage(net.minecraft.network.chat.Component.literal("You killed yourself!"));
 
                     return Command.SINGLE_SUCCESS;
